@@ -54,3 +54,4 @@ In order to make any requests to the API, you first need to authorize, using av 
 
 ### Ready for some hacking?
 With everything set up and working properly, you're ready to start on the workshop. The workshop is divided into sections under the /Documents folder. Start by navigating to [0_INTRODUCTION.md](Documents/0_INTRODUCTION.md), and go on from there.
+
