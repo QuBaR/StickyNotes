@@ -74,20 +74,20 @@ public class NotesDb : DbContext
         if (_secrets != null)
         {
             users.Add(new User { Username = "Test", Password = _secrets.TestUserPassword });
-            notes.Add(new Note { Id = 1001, Author = "Test", Content = "Husk å kjøpe brød" });
-            notes.Add(new Note { Id = 1002, Author = "Test", Content = "Hva var passordet til databasen igjen?" });
+            notes.Add(new Note { Id = 1001, Author = "Test", Content = "Kom ihåg att köpa bröd" });
+            notes.Add(new Note { Id = 1002, Author = "Test", Content = "Vad var lösenordet till databasen igen?" });
 
             var flagNote = notes[random.Next(0, notes.Count - 1)];
             flagNote.Content = $"You'll never find my secret FLAG: {_secrets.BrokenAccessControl}";
 
             var referenceNote = notes[42];
-            referenceNote.Content = $"Where's the note? {flagNote.Id}";
+            referenceNote.Content = $"Var finns anteckningen? {flagNote.Id}";
 
             var flagSecret = secrets[random.Next(0, secrets.Count - 1)];
             flagSecret.Value = $"FLAG: {_secrets.SqlInjection}";
 
             users.Add(new User { Username = "Admin", Password = _secrets.CrossSiteScripting.ToString() });
-            notes.Add(new Note { Id = 1003, Author = "Admin", Content = "Du er Admin!" });
+            notes.Add(new Note { Id = 1003, Author = "Admin", Content = "Du är Admin!" });
         }
 
         modelBuilder.Entity<User>().HasData(users);
