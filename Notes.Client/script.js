@@ -104,9 +104,7 @@ const remove = (url, success) => {
 // API Client
 
 let url = 'http://localhost:5000';
-if (window.location.href.includes('ngrok')) {
-    url = 'https://sticky-notes.eu.ngrok.io';
-}
+
 
 const ping = () => getText(`${url}/ping`, 'NOT PONG', console.log);
 
@@ -261,7 +259,7 @@ const notesList = document.getElementById('notesList');
 const noteListItem = note => {
     var content = document.createElement('div');
     content.setAttribute('class', 'note-content');
-    content.innerHTML = note.content;
+    content.innerText = note.content;
 
     var button = document.createElement('button');
     button.setAttribute('type', 'button');
