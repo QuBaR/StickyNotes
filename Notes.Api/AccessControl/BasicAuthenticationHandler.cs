@@ -16,6 +16,7 @@ public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSc
 {
     private readonly NotesDb _database;
 
+    [Obsolete]
     public BasicAuthenticationHandler(IOptionsMonitor<AuthenticationSchemeOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock, NotesDb database)
         : base(options, logger, encoder, clock)
     {
